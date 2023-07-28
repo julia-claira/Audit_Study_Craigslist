@@ -1,0 +1,120 @@
+---
+title: "Analysis"
+author: "Chris McClure-St. Amant"
+date: '2023-04-15'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(lmtest)
+library(sandwich)
+library(magrittr)
+library(ggplot2)
+library(data.table)
+library(stargazer)
+install.packages('modelsummary')
+library(modelsummary)
+```
+
+```{r}
+d <- fread('data_for_analysis.csv')
+
+head(d)
+```
+We'll make three or four models. One will just be the outcome regressed on the treatment. The next will include covariates. The third will examine heterogeneous treatment effects for the front and back of house. 
+```{r}
+base_model <- d[ , lm(interview_requested_binary ~ factor(treatment))]
+base_model$vcovHC_ <- vcovHC(base_model, type='HC0')
+base_coeftest <- coeftest(base_model, vcov. = base_model$vcovHC_)
+
+model_job_type <- d[ , lm(interview_requested_binary ~ factor(treatment) + factor(foh_boh))]
+model_job_type$vcovHC_ <- vcovHC(model_job_type, type='HC0')
+job_type_coeftest <- coeftest(model_job_type, vcov. = model_job_type$vcovHC_)
+
+model_full <- d[ , lm(interview_requested_binary ~ factor(treatment) + factor(foh_boh) + factor(City) + factor(job_category) + factor(time_base))]
+model_full$vcovHC_ <- vcovHC(model_full, type='HC0')
+full_coeftest <- coeftest(model_full, vcov. = model_full$vcovHC_)
+
+summary(model_full)
+```
+
+```{r}
+stargazer(base_coeftest, job_type_coeftest, full_coeftest, 
+          omit=c('factor\\(area\\)*', 'factor\\(City\\)*', 'factor\\(job_category\\)*', 'factor\\(time_base\\)*'), 
+          type='text',
+          add.lines = list(c("Fixed effects?", "No", "No", "Yes")),
+          column.labels = c("Base", "Job Type", "Full"))
+```
+
+**TRYING MODELSUMMARY FOR FUN, we'll pick the best one for our paper**
+```{r}
+modelsummary(list(base_model, model_job_type, model_full), coef_omit = 'factor\\(area|City|job_category|time_base\\)*', vcov = 'HC0', stars=TRUE)#output = 'latex')
+```
+
+NOTE: types HC0 and HC1 of vcovHC are the only ones that would compute. My reading of https://jslsoc.sitehost.iu.edu/files_research/testing_tests/hccm/99TAS.pdf suggests that it's fine to use HC1 given that our sample size is > 250. 
+```{r}
+model_hte <- d[ , lm(interview_requested_binary ~  factor(treatment) + factor(treatment)*factor(foh_boh) + factor(area) + factor(job_category) + factor(time_base))]
+model_hte$vcovHC_ <- vcovHC(model_hte, type='HC1')
+hte_coeftest <- coeftest(model_hte, vcov. = model_hte$vcovHC_)
+
+hte_coeftest
+#summary(model_hte)
+```
+
+```{r}
+stargazer(model_hte, omit=c('factor\\(job_category\\)*', 'factor\\(time_base\\)*', 'factor\\(area\\)*'), se = model_hte$vcovHC_ %>% diag() %>% sqrt(), 
+          type='text',
+          add.lines = list(c("Fixed effects?", "Yes")))
+```
+**again with the modelsummary**
+```{r}
+modelsummary(model_hte, coef_omit = 'factor\\(area|City|job_category|time_base\\)*', vcov = 'HC1')
+```
+
+
+
+```{r}
+model_hte_city <- d[ , lm(interview_requested_binary ~ factor(treatment) + factor(treatment):factor(City) + factor(foh_boh) + factor(job_category) + factor(time_base))]
+model_hte_city$vcovHC_ <- vcovHC(model_hte_city, type='HC1')
+hte_coeftest_city <- coeftest(model_hte_city, vcov. = model_hte_city$vcovHC_)
+
+#summary(model_hte_city)
+hte_coeftest_city
+```
+```{r}
+stargazer(hte_coeftest_city, omit=c('factor\\(job_category\\)*', 'factor\\(time_base\\)*'), 
+          type='text',
+          add.lines = list(c("Fixed effects?", "Yes")))
+```
+**again with the modelsummary**
+```{r}
+modelsummary(model_hte_city, coef_omit = 'factor\\(foh_boh|job_category|time_base\\)*', vcov = 'HC1', stars=TRUE, output='cityHTE.md')
+```
+
+*Analysis of the data*
+
+To understand the effect of stated gender on job interview offers, we specify three nested regression models of the form $\widehat{interview\_requested} = \beta_0 + \beta_1 woman + \beta_2 nonbinary + Z_\gamma$, where $Z_\gamma$ represents additional covariates added to increase statistical precision. The first model includes only the outcome and the treatment. The second model adds covariates indicating whether the job posting was for a front-of-house (e.g., server, host) position or a back-of-house (e.g., line cook, chef) position. The final model adds fixed effects for location, time-base of employment, and finer-grained categories for the type of job that was advertised. Figure __FIGNUMBER__ shows the results of these regressions. 
+
+We also specify a model intended to assess the existence of heterogeneous treatment effects based on whether the job was a front-of-house (FOH) or back-of-house (BOH) position. This model is of the form $\widehat{interview\_requested} = \beta_0 + \beta_1woman + \beta_2nonbinary + \beta_3 woman \times FOH + \beta_4 woman \times BOH + \beta_5 nonbinary \times FOH + \beta_6 nonbinary \times BOH + Z_\gamma$, where $Z_\gamma$ again represents additional covariates. The results of this regression are in Figure __FIGNUMBER__. 
+
+
+**Discussion**
+Our analysis does not provide evidence that leads us to reject the null hypothesis that there is no bias in food service hiring practices. The regression results further indicate that no heterogeneous treatment effects exist when we examine whether the treatment may have had a different effect on front-of-house and back-of-house positions. Despite the lack of effects that reach the threshold for statistical significance, we do note that the non-binary resume had approximately a 5% lower response rate across the board (approx. 30% for men and women, 25% for non-binary). This is both consistent with our original hypothesis and practically significant. Had the people reflected in our resumes been real, the non-binary job seeker would have been denied about 1/6 of interview opportunities offered to their peers. However, several caveats and limitations apply to these conclusions. 
+
+*1. Generalizability*
+This experiment is limited in its generalizability to the greater population of food service jobs in important ways. Firstly, we collected job postings only from Craigslist, and as such we were limited to jobs in large metropolitan areas where Craigslist provides services. This means that rural areas were excluded, as were jobs posted only on other services or advertised through more traditional means such as window signs or word-of-mouth. 
+
+*2. Statistical Power*
+In revisiting the power calculations conducted prior to the study, we find that to reliably detect a true underlying difference of 5% between any one treatment group and the control group, our sample size would need to be 4-5 times bigger than it was for this study. Time constraints and limits imposed by email services and Craigslist would have made such a sample size nearly impossible in this study, but it does provide insight into how future work might improve upon our research.
+
+*3. Audit study*
+This was an audit study, meaning it only examined part of the transaction of interest. In our case, we only looked at the very first part of the hiring process: submitting a resume and being offered an interview. While this is a key step in getting hired, it is far from a complete picture, and we suspect that gender bias could manifest itself at any part of the process. 
+
+*4. Not enough names*
+Prior work using names to signal race to politicians has used a multitude of names to ensure that no single name has unusual effects on the participants.[^1] While we attempted to choose names that were fairly neutral, and had the benefit of directly signaling gender via pronouns, future work should consider using a wider variety of names to more precisely estimate the effect of stated gender. 
+
+[^1]: Hughes, D., Gell-Redman, M., Crabtree, C., Krishnaswami, N., Rodenberger, D., & Monge, G. (2020). Persistent Bias Among Local Election Officials. Journal of Experimental Political Science, 7(3), 179-187. doi:10.1017/XPS.2019.23

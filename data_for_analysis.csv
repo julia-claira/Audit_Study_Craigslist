@@ -1,0 +1,639 @@
+job_category,time_base,Post Id,City,area,Resume Version Sent,treatment,Server or Cook,foh_boh,Interview Requested,interview_requested_binary
+Help,part-time,7605103258,portland,multnomah co,1,Man,s,FOH,Yes,1
+Help,employee's choice,7605082903,portland,washington co,4,Woman,c,BOH,,0
+Line Cook,full-time,7605036257,portland,multnomah co,3,Man,c,BOH,,0
+Line Cook,full-time,7604843684,portland,clackamas co,4,Woman,c,BOH,,0
+Head Chef,full-time,7602189120,portland,yamhill co,3,Man,c,BOH,,0
+Server,employee's choice,7602135421,portland,yamhill co,2,Woman,s,FOH,,0
+Server,part-time,7605089761,atlanta,atlanta,1,Man,s,FOH,,0
+FOH,full-time,7605056802,atlanta,atlanta,2,Woman,s,FOH,Yes,1
+Host/Hostess,part-time,7605015703,atlanta,atlanta,1,Man,s,FOH,,0
+Line Cook,full-time,7604010948,atlanta,otp north,4,Woman,c,BOH,,0
+Line Cook,full-time,7603964379,atlanta,otp north,3,Man,c,BOH,,0
+Help,employee's choice,7603777970,atlanta,otp north,4,Woman,c,BOH,Yes,1
+Host/Hostess,part-time,7605329214,SF bay area,santa cruz,1,Man,s,FOH,,0
+Server,full-time,7605329059,SF bay area,north bay,2,Woman,s,FOH,Yes,1
+Sous Chef,full-time,7605216376,SF bay area,south bay,3,Man,c,BOH,,0
+FOH,part-time,7605214173,SF bay area,east bay,4,Woman,c,BOH,,0
+Server,full-time,7605179676,SF bay area,san francisco,1,Man,s,FOH,Yes,1
+Line Cook,full-time,7605173913,SF bay area,east bay,4,Woman,c,BOH,Yes,1
+Line Cook,part-time,7605150633,SF bay area,san francisco,3,Man,c,BOH,,0
+Help,full-time,7605141985,SF bay area,east bay,2,Woman,s,FOH,Yes,1
+FOH,full-time,7605126484,SF bay area,east bay,1,Man,s,FOH,Yes,1
+FOH,full-time,7605124598,SF bay area,santa cruz,2,Woman,s,FOH,Yes,1
+FOH,part-time,7605528948,portland,multnomah co,1,Man,s,FOH,,0
+Server,part-time,7605061940,portland,multnomah co,2,Woman,s,FOH,,0
+Help,full-time,7604440262,portland,multnomah co,1,Man,s,FOH,,0
+Line Cook,part-time,7604320852,portland,multnomah co,4,Woman,c,BOH,Yes,1
+FOH,employee's choice,7604211671,portland,multnomah co,1,Man,s,FOH,,0
+Help,employee's choice,7604036882,portland,multnomah co,2,Woman,s,FOH,,0
+Line Cook,full-time,7604000892,portland,multnomah co,3,Man,c,BOH,Yes,1
+Line Cook,part-time,7605373183,atlanta,atlanta,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7605357508,atlanta,atlanta,3,Man,c,BOH,Yes,1
+Chef,full-time,7605327824,atlanta,atlanta,4,Woman,c,BOH,,0
+Line Cook,full-time,7605321668,atlanta,atlanta,3,Man,c,BOH,Yes,1
+Server,full-time,7604814766,atlanta,atlanta,2,Woman,s,FOH,Yes,1
+FOH,employee's choice,7604756999,atlanta,atlanta,3,Man,c,BOH,Yes,1
+Host/Hostess,full-time,7604732590,atlanta,atlanta,2,Woman,s,FOH,Yes,1
+Head Chef,full-time,7604698632,atlanta,atlanta,3,Man,c,BOH,,0
+Server,employee's choice,7604663842,atlanta,atlanta,2,Woman,s,FOH,,0
+Server,part-time,7604663521,atlanta,atlanta,1,Man,s,FOH,,0
+Server,full-time,7604630693,atlanta,atlanta,2,Woman,s,FOH,,0
+Line Cook,part-time,7605564578,SF bay area,east bay,3,Man,c,BOH,,0
+FOH,employee's choice,7605562022,SF bay area,peninsula,2,Woman,s,FOH,,0
+Server,part-time,7605552487,SF bay area,south bay,1,Man,s,FOH,,0
+Line Cook,full-time,7605544873,SF bay area,south bay,4,Woman,c,BOH,,0
+Server,employee's choice,7605528103,SF bay area,san francisco,1,Man,s,FOH,,0
+Help,part-time,7605514285,SF bay area,santa cruz,2,Woman,s,FOH,,0
+BOH,full-time,7605502272,SF bay area,east bay,3,Man,c,BOH,,0
+Cashier,part-time,7605482328,SF bay area,san francisco,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7605479248,SF bay area,north bay,3,Man,c,BOH,,0
+Server,full-time,7605454785,SF bay area,east bay,2,Woman,s,FOH,,0
+Line Cook,part-time,7605453437,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Server,part-time,7605441275,SF bay area,east bay,2,Woman,s,FOH,Yes,1
+FOH,employee's choice,7605439520,SF bay area,north bay,1,Man,s,FOH,Yes,1
+Barista,part-time,7605680043,portland,washington co,5,Nonbinary,s,FOH,,0
+Chef,full-time,7605595684,portland,clark/cowlitz,6,Nonbinary,c,BOH,Yes,1
+Server,employee's choice,7605481204,portland,yamhill co,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7605411223,portland,clark/cowlitz,6,Nonbinary,c,BOH,,0
+FOH,employee's choice,7605211182,portland,washington co,5,Nonbinary,s,FOH,,0
+Line Cook,employee's choice,7603824500,portland,multnomah co,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7603798460,portland,multnomah co,6,Nonbinary,c,BOH,,0
+BOH,full-time,7604683490,atlanta,otp east,5,Nonbinary,s,FOH,Yes,1
+Server,part-time,7604590424,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+Head Chef,full-time,7604534005,atlanta,otp west,6,Nonbinary,c,BOH,,0
+Line Cook,part-time,7604482359,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+FOH,full-time,7604303312,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+Head Chef,full-time,7604291402,atlanta,atlanta,3,Man,c,BOH,,0
+FOH,employee's choice,7604231986,atlanta,atlanta,2,Woman,s,FOH,,0
+Barista,part-time,7605805890,SF bay area,san francisco,5,Nonbinary,s,FOH,Yes,1
+FOH,full-time,7605751004,SF bay area,santa cruz,5,Nonbinary,s,FOH,,0
+Server,full-time,7605750356,SF bay area,san francisco,5,Nonbinary,s,FOH,Yes,1
+Line Cook,employee's choice,7605725886,SF bay area,north bay,6,Nonbinary,c,BOH,Yes,1
+Server,full-time,7605721042,SF bay area,north bay,5,Nonbinary,s,FOH,Yes,1
+Sous Chef,employee's choice,7605709525,SF bay area,north bay,6,Nonbinary,c,BOH,Yes,1
+Manager,full-time,7605584887,SF bay area,north bay,1,Man,s,FOH,Yes,1
+Head Chef,full-time,7605424568,SF bay area,north bay,4,Woman,c,BOH,,0
+Server,full-time,7605423375,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Server,full-time,7605414483,SF bay area,san francisco,1,Man,s,FOH,,0
+Line Cook,employee's choice,7605820283,portland,washington co,4,Woman,c,BOH,,0
+Line Cook,full-time,7605783776,portland,washington co,6,Nonbinary,c,BOH,,0
+Sous Chef,full-time,7604797248,portland,clackamas co,3,Man,c,BOH,,0
+Barista,employee's choice,7604784383,portland,clackamas co,2,Woman,s,FOH,,0
+Line Cook,full-time,7604757389,portland,clackamas co,6,Nonbinary,c,BOH,Yes,1
+Line Cook,employee's choice,7604756209,portland,washington co,3,Man,c,BOH,Yes,1
+Line Cook,employee's choice,7604736735,portland,clark/cowlitz,4,Woman,c,BOH,Yes,1
+BOH,part-time,7604723331,portland,clark/cowlitz,5,Nonbinary,s,FOH,,0
+Server,part-time,7604190308,atlanta,atlanta,2,Woman,s,FOH,Yes,1
+Busser,part-time,7604151035,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+BOH,part-time,7604028480,atlanta,atlanta,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7603943891,atlanta,atlanta,4,Woman,c,BOH,Yes,1
+Bartender,full-time,7603907827,atlanta,atlanta,5,Nonbinary,s,FOH,Yes,1
+Line Cook,full-time,7604156841,atlanta,atlanta,3,Man,c,BOH,,0
+Server,employee's choice,7605934661,portland,clark/cowlitz,1,Man,s,FOH,,0
+FOH,employee's choice,7605919198,portland,washington co,2,Woman,s,FOH,,0
+Server,part-time,7605916463,portland,yamhill co,5,Nonbinary,s,FOH,,0
+Bartender,part-time,7604607057,portland,washington co,6,Nonbinary,c,BOH,,0
+Host/Hostess,part-time,7604518364,portland,clark/cowlitz,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7604406320,portland,clackamas co,6,Nonbinary,c,BOH,,0
+BOH,full-time,7605999947,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Bartender,employee's choice,7605976115,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+FOH,part-time,7605968798,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7605927931,SF bay area,east bay,6,Nonbinary,c,BOH,,0
+Cashier,full-time,7605999263,atlanta,atlanta,5,Nonbinary,s,FOH,Yes,1
+Server,part-time,7605929145,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+Line Cook,part-time,7606047363,SF bay area,santa cruz,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7606046289,SF bay area,peninsula,4,Woman,c,BOH,,0
+Cashier,full-time,7605924392,SF bay area,san francisco,5,Nonbinary,s,FOH,Yes,1
+Line Cook,employee's choice,7605923161,SF bay area,santa cruz,3,Man,c,BOH,,0
+BOH,full-time,7606252031,atlanta,otp south,3,Man,c,BOH,,0
+Line Cook,full-time,7606195591,atlanta,atlanta,6,Nonbinary,c,BOH,Yes,1
+Server,employee's choice,7606180232,atlanta,atlanta,1,Man,s,FOH,Yes,1
+Bartender,employee's choice,7606488428,SF bay area,north bay,2,Woman,s,FOH,,0
+Head Chef,part-time,7606467988,SF bay area,east bay,6,Nonbinary,c,BOH,,0
+Line Cook,employee's choice,7606467302,SF bay area,north bay,3,Man,c,BOH,,0
+Head Chef,full-time,7606459823,SF bay area,south bay,4,Woman,c,BOH,,0
+FOH,part-time,7606451604,SF bay area,south bay,1,Man,s,FOH,,0
+Bartender,part-time,7606450170,SF bay area,north bay,2,Woman,s,FOH,,0
+Manager,full-time,7606449212,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+Line Cook,employee's choice,7606441285,SF bay area,santa cruz,3,Man,c,BOH,,0
+Server,full-time,7606437237,SF bay area,peninsula,2,Woman,s,FOH,,0
+Host/Hostess,part-time,7606392350,portland,clackamas co,5,Nonbinary,s,FOH,,0
+Barista,part-time,7606380363,portland,clark/cowlitz,1,Man,s,FOH,,0
+Help,full-time,7606242424,portland,washington co,4,Woman,c,BOH,,0
+Manager,employee's choice,7606013439,portland,clackamas co,5,Nonbinary,s,FOH,,0
+Help,employee's choice,7604038293,portland,clackamas co,1,Man,s,FOH,,0
+FOH,employee's choice,7606434664,SF bay area,east bay,2,Woman,s,FOH,,0
+FOH,part-time,7606434552,SF bay area,peninsula,5,Nonbinary,s,FOH,,0
+Manager,full-time,7606432098,SF bay area,san francisco,3,Man,c,BOH,,0
+Sous Chef,full-time,7606431748,SF bay area,east bay,4,Woman,c,BOH,,0
+Host/Hostess,full-time,7606430376,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+FOH,employee's choice,7606421165,SF bay area,san francisco,3,Man,c,BOH,,0
+Server,part-time,7606397948,SF bay area,san francisco,2,Woman,s,FOH,,0
+Line Cook,part-time,7606393903,SF bay area,santa cruz,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7606387507,SF bay area,east bay,1,Man,s,FOH,,0
+Server,employee's choice,7606381014,SF bay area,san francisco,2,Woman,s,FOH,,0
+Help,part-time,7606373626,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+FOH,part-time,7606370921,SF bay area,san francisco,3,Man,c,BOH,,0
+Server,part-time,7605403841,SF bay area,san francisco,1,Man,s,FOH,,0
+Server,part-time,7605397169,SF bay area,north bay,2,Woman,s,FOH,,0
+Line Cook,employee's choice,7605396758,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7605391017,SF bay area,south bay,3,Man,c,BOH,,0
+Sous Chef,full-time,7605369893,SF bay area,north bay,4,Woman,c,BOH,,0
+Server,full-time,7605364446,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Bartender,employee's choice,7605358739,SF bay area,san francisco,1,Man,s,FOH,,0
+FOH,full-time,7606552909,portland,washington co,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7606513508,portland,multnomah co,6,Nonbinary,c,BOH,Yes,1
+Line Cook,part-time,7603986948,portland,clark/cowlitz,3,Man,c,BOH,,0
+Line Cook,part-time,7603982586,portland,washington co,4,Woman,c,BOH,,0
+Chef,part-time,7605412398,SF bay area,east bay,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7603371568,portland,clackamas co,3,Man,c,BOH,,0
+Help,employee's choice,7603700963,atlanta,atlanta,2,Woman,s,FOH,,0
+Line Cook,part-time,7603693803,atlanta,otp south,6,Nonbinary,c,BOH,Yes,1
+Line Cook,part-time,7605349654,SF bay area,san francisco,3,Man,c,BOH,,0
+BOH,full-time,7605339370,SF bay area,north bay,4,Woman,c,BOH,,0
+Server,full-time,7605124592,SF bay area,south bay,5,Nonbinary,s,FOH,,0
+Server,part-time,7605108209,SF bay area,east bay,1,Man,s,FOH,Yes,1
+Line Cook,full-time,7605104042,SF bay area,santa cruz,4,Woman,c,BOH,,0
+Server,part-time,7605090274,SF bay area,santa cruz,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7605088823,SF bay area,north bay,3,Man,c,BOH,,0
+Bartender,full-time,7605044724,SF bay area,north bay,2,Woman,s,FOH,,0
+Host/Hostess,employee's choice,7605043293,SF bay area,north bay,5,Nonbinary,s,FOH,,0
+Cashier,part-time,7605032042,SF bay area,north bay,1,Man,s,FOH,,0
+Line Cook,full-time,7605019622,SF bay area,san francisco,4,Woman,c,BOH,,0
+Line Cook,full-time,7605019352,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7605008701,SF bay area,south bay,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7604998481,SF bay area,east bay,6,Nonbinary,c,BOH,Yes,1
+Manager,full-time,7604991907,SF bay area,east bay,1,Man,s,FOH,,0
+Server,full-time,7604991376,SF bay area,north bay,2,Woman,s,FOH,,0
+Chef,full-time,7604883422,SF bay area,san francisco,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7604862860,SF bay area,peninsula,4,Woman,c,BOH,,0
+Sous Chef,full-time,7604855423,SF bay area,santa cruz,3,Man,c,BOH,Yes,1
+Host/Hostess,part-time,7604785560,SF bay area,san francisco,1,Man,s,FOH,,0
+BOH,full-time,7604762164,SF bay area,santa cruz,4,Woman,c,BOH,,0
+Line Cook,full-time,7604747903,SF bay area,east bay,3,Man,c,BOH,,0
+Bartender,full-time,7604739309,SF bay area,san francisco,2,Woman,s,FOH,,0
+Bartender,part-time,7606500627,SF bay area,san francisco,2,Woman,s,FOH,,0
+BOH,full-time,7606518388,SF bay area,north bay,3,Man,c,BOH,Yes,1
+FOH,employee's choice,7604713193,SF bay area,san francisco,2,Woman,s,FOH,,0
+Line Cook,full-time,760501024,SF bay area,san francisco,3,Man,c,BOH,Yes,1
+Server,full-time,7603708300,SF bay area,san francisco,2,Woman,s,FOH,,0
+Cashier,full-time,7606604962,SF bay area,east bay,1,Man,s,FOH,,0
+Sous Chef,full-time,7606592461,SF bay area,east bay,6,Nonbinary,c,BOH,,0
+Barista,part-time,7606592149,SF bay area,peninsula,2,Woman,s,FOH,Yes,1
+Sous Chef,full-time,7606591414,SF bay area,east bay,6,Nonbinary,c,BOH,Yes,1
+Cashier,part-time,7606563400,SF bay area,north bay,1,Man,s,FOH,,0
+Head Chef,full-time,7606553813,SF bay area,san francisco,4,Woman,c,BOH,,0
+Line Cook,part-time,7606548954,SF bay area,peninsula,6,Nonbinary,c,BOH,Yes,1
+Server,part-time,7606523569,SF bay area,peninsula,5,Nonbinary,s,FOH,Yes,1
+Bartender,part-time,7606497920,SF bay area,north bay,1,Man,s,FOH,,0
+Bartender,full-time,7606495416,SF bay area,north bay,2,Woman,s,FOH,,0
+Server,employee's choice,7606489736,SF bay area,north bay,5,Nonbinary,s,FOH,,0
+Barista,full-time,7606368982,SF bay area,san francisco,1,Man,s,FOH,Yes,1
+BOH,employee's choice,7606355351,SF bay area,east bay,4,Woman,c,BOH,Yes,1
+BOH,full-time,7606335854,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Server,part-time,7605891630,new york,brooklyn,1,Man,s,FOH,,0
+Cashier,employee's choice,7605866638,new york,manhattan,1,Man,s,FOH,,0
+Host/Hostess,part-time,7605864855,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7605845655,new york,manhattan,6,Nonbinary,c,BOH,,0
+Bartender,part-time,7605834017,new york,manhattan,2,Woman,s,FOH,,0
+FOH,full-time,7605832834,new york,new jersey,5,Nonbinary,s,FOH,,0
+Host/Hostess,full-time,7605832521,new york,brooklyn,1,Man,s,FOH,,0
+Busser,full-time,7605831050,new york,brooklyn,2,Woman,s,FOH,,0
+Server,full-time,7605828141,new york,manhattan,5,Nonbinary,s,FOH,Yes,1
+Line Cook,full-time,7605812160,new york,westchester,3,Man,c,BOH,,0
+Bartender,full-time,7605796062,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7605801506,new york,queens,6,Nonbinary,c,BOH,,0
+Server,full-time,7605797322,new york,manhattan,1,Man,s,FOH,,0
+Head Chef,full-time,7605789567,new york,manhattan,4,Woman,c,BOH,,0
+Host/Hostess,part-time,7605754099,new york,manhattan,5,Nonbinary,s,FOH,,0
+FOH,full-time,7604952409,chicago,city of chicago,1,Man,s,FOH,,0
+BOH,part-time,7604940975,chicago,city of chicago,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7604877936,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Bartender,part-time,7604846032,chicago,city of chicago,1,Man,s,FOH,,0
+Line Cook,full-time,7604840850,chicago,city of chicago,4,Woman,c,BOH,,0
+Barista,employee's choice,7604829873,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+BOH,part-time,7604815789,chicago,city of chicago,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7604770984,chicago,west chicagoland,4,Woman,c,BOH,,0
+Host/Hostess,full-time,7604755403,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Cashier,full-time,7604752714,chicago,city of chicago,1,Man,s,FOH,,0
+Line Cook,full-time,7605050781,chicago,city of chicago,4,Woman,c,BOH,,0
+Server,part-time,7605028878,chicago,north chicagoland,5,Nonbinary,s,FOH,,0
+Line Cook,employee's choice,7605004147,chicago,city of chicago,3,Man,c,BOH,,0
+BOH,part-time,7605001425,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Help,full-time,7604731555,chicago,west chicagoland,6,Nonbinary,c,BOH,,0
+BOH,employee's choice,7604671173,chicago,city of chicago,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7604629513,chicago,city of chicago,4,Woman,c,BOH,,0
+Busser,part-time,7604600606,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Busser,full-time,7604589326,chicago,city of chicago,1,Man,s,FOH,,0
+Line Cook,part-time,7604566842,chicago,city of chicago,4,Woman,c,BOH,,0
+Server,full-time,7604560843,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7604542472,chicago,north chicagoland,3,Man,c,BOH,,0
+Server,employee's choice,7604540662,chicago,northwest suburbs,2,Woman,s,FOH,,0
+Line Cook,full-time,7604479299,chicago,northwest suburbs,6,Nonbinary,c,BOH,Yes,1
+Line Cook,full-time,7604445132,chicago,west chicagoland,3,Man,,,,0
+Line Cook,employee's choice,7604417073,chicago,city of chicago,3,Man,c,BOH,,0
+Help,part-time,7604404111,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7604393152,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Help,full-time,7604360130,chicago,city of chicago,1,Man,s,FOH,,0
+Line Cook,full-time,7604310472,chicago,city of chicago,4,Woman,c,BOH,,0
+Help,full-time,7606300929,SF bay area,north bay,1,Man,s,FOH,,0
+Line Cook,full-time,7606269429,SF bay area,south bay,4,Woman,c,BOH,,0
+Server,part-time,7606234246,SF bay area,peninsula,5,Nonbinary,s,FOH,,0
+Chef,full-time,7606197411,SF bay area,peninsula,3,Man,c,BOH,,0
+Server,part-time,7606189181,SF bay area,peninsula,2,Woman,s,FOH,Yes,1
+Server,part-time,7606186845,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+Server,part-time,7606172244,SF bay area,north bay,1,Man,s,FOH,,0
+BOH,employee's choice,7606152716,SF bay area,san francisco,2,Woman,s,FOH,,0
+Line Cook,full-time,7606150000,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7606135645,SF bay area,east bay,1,Man,s,FOH,,0
+BOH,part-time,7606116159,SF bay area,san francisco,2,Woman,s,FOH,,0
+Server,part-time,7606111809,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7606106216,SF bay area,san francisco,3,Man,c,BOH,,0
+Line Cook,employee's choice,7606101882,SF bay area,east bay,4,Woman,c,BOH,,0
+Chef,part-time,7606087601,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+BOH,part-time,7606086970,SF bay area,east bay,1,Man,s,FOH,,0
+Barista,full-time,7606085896,SF bay area,san francisco,2,Woman,s,FOH,,0
+FOH,part-time,7605908812,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Manager,full-time,7605893700,SF bay area,san francisco,3,Man,c,BOH,,0
+Host/Hostess,part-time,7605842346,SF bay area,san francisco,2,Woman,s,FOH,,0
+Chef,employee's choice,7605836675,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+Host/Hostess,full-time,7605833334,SF bay area,north bay,1,Man,s,FOH,,0
+FOH,employee's choice,7606358884,new york,brooklyn,1,Man,s,FOH,,0
+Manager,full-time,7606358577,new york,manhattan,2,Woman,s,FOH,,0
+Server,full-time,7605368363,new york,brooklyn,5,Nonbinary,s,FOH,,0
+Line Cook,part-time,7605364063,new york,queens,3,Man,c,BOH,,0
+Server,employee's choice,7605361891,new york,westchester,1,Man,s,FOH,,0
+Line Cook,full-time,7605361001,new york,queens,4,Woman,c,BOH,,0
+Manager,full-time,7605353633,new york,manhattan,5,Nonbinary,s,FOH,,0
+Line Cook,part-time,7605347711,new york,bronx,3,Man,c,BOH,,0
+Server,full-time,7605345450,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7605331396,new york,manhattan,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7605314911,new york,manhattan,4,Woman,c,BOH,,0
+Server,part-time,7605308086,new york,brooklyn,1,Man,s,FOH,,0
+Line Cook,full-time,7605304059,new york,manhattan,4,Woman,c,BOH,Yes,1
+Line Cook,employee's choice,7605298353,new york,brooklyn,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7606974100,SF bay area,east bay,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7606967885,SF bay area,san francisco,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7606955220,SF bay area,east bay,6,Nonbinary,c,BOH,,0
+Line Cook,employee's choice,7606953706,SF bay area,peninsula,3,Man,c,BOH,,0
+Server,part-time,7606950574,SF bay area,san francisco,2,Woman,s,FOH,Yes,1
+Manager,part-time,7606935015,SF bay area,san francisco,5,Nonbinary,s,FOH,Yes,1
+Manager,full-time,7606930472,SF bay area,san francisco,1,Man,s,FOH,Yes,1
+BOH,part-time,7606923608,SF bay area,east bay,4,Woman,c,BOH,Yes,1
+BOH,part-time,7606919609,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Host/Hostess,full-time,7606912670,SF bay area,north bay,1,Man,s,FOH,,0
+BOH,part-time,7606909110,SF bay area,north bay,4,Woman,c,BOH,Yes,1
+Chef,employee's choice,7606906109,SF bay area,east bay,6,Nonbinary,c,BOH,Yes,1
+Cashier,full-time,7606905437,SF bay area,san francisco,1,Man,s,FOH,Yes,1
+Chef,full-time,7606899947,SF bay area,south bay,4,Woman,c,BOH,,0
+Line Cook,part-time,7606893375,SF bay area,san francisco,6,Nonbinary,c,BOH,Yes,1
+BOH,full-time,7606892771,SF bay area,north bay,1,Man,s,FOH,,0
+Host/Hostess,part-time,7606881381,SF bay area,santa cruz,4,Woman,c,BOH,Yes,1
+Server,part-time,7606880772,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Server,part-time,7606862564,SF bay area,san francisco,1,Man,s,FOH,,0
+FOH,part-time,7606853548,SF bay area,north bay,2,Woman,s,FOH,,0
+Bartender,part-time,7606852921,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+Cashier,employee's choice,7606837983,SF bay area,south bay,1,Man,s,FOH,,0
+Server,part-time,7606837546,SF bay area,north bay,2,Woman,s,FOH,Yes,1
+Host/Hostess,part-time,7606825580,SF bay area,east bay,5,Nonbinary,s,FOH,Yes,1
+Bartender,part-time,7606818801,SF bay area,san francisco,1,Man,s,FOH,,0
+Line Cook,part-time,7606817226,SF bay area,east bay,4,Woman,c,BOH,Yes,1
+Line Cook,employee's choice,7606816696,SF bay area,south bay,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7606814909,SF bay area,santa cruz,3,Man,c,BOH,,0
+FOH,part-time,7606808386,SF bay area,east bay,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606807506,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7606779830,SF bay area,north bay,3,Man,c,BOH,,0
+Barista,full-time,7606733214,SF bay area,north bay,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606656236,SF bay area,north bay,6,Nonbinary,c,BOH,Yes,1
+Server,employee's choice,7606627465,SF bay area,north bay,1,Man,s,FOH,,0
+BOH,contract,7604710543,SF bay area,north bay,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7604553646,SF bay area,north bay,6,Nonbinary,c,BOH,Yes,1
+Line Cook,part-time,7604405326,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Sous Chef,full-time,7604370425,SF bay area,north bay,4,Woman,c,BOH,Yes,1
+Host/Hostess,part-time,7604348199,SF bay area,north bay,5,Nonbinary,s,FOH,,0
+Server,full-time,7604242083,SF bay area,north bay,2,Woman,s,FOH,,0
+Server,employee's choice,7604029640,SF bay area,north bay,1,Man,s,FOH,,0
+Bartender,employee's choice,7604004062,SF bay area,north bay,2,Woman,s,FOH,,0
+Chef,full-time,7603911151,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Help,employee's choice,7603848627,SF bay area,north bay,3,Man,c,BOH,,0
+Line Cook,part-time,7603663133,SF bay area,north bay,4,Woman,c,BOH,,0
+Server,employee's choice,7603634089,SF bay area,north bay,5,Nonbinary,s,FOH,,0
+BOH,part-time,7603603863,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Bartender,employee's choice,7603402978,SF bay area,north bay,2,Woman,s,FOH,,0
+Bartender,part-time,7603188430,SF bay area,north bay,5,Nonbinary,s,FOH,,0
+BOH,full-time,7606665016,new york,manhattan,3,Man,c,BOH,,0
+Cashier,part-time,7606660060,new york,queens,2,Woman,s,FOH,,0
+Cashier,full-time,7606658274,new york,queens,5,Nonbinary,s,FOH,Yes,1
+Server,employee's choice,7606656521,new york,manhattan,1,Man,s,FOH,Yes,1
+BOH,full-time,7606653094,new york,westchester,4,Woman,c,BOH,,0
+Busser,part-time,7606651571,new york,manhattan,5,Nonbinary,s,FOH,,0
+Waiter,employee's choice,7606646140,new york,brooklyn,1,Man,s,FOH,,0
+BOH,full-time,7606634344,new york,westchester,4,Woman,c,BOH,,0
+Server,part-time,7606629460,new york,manhattan,5,Nonbinary,s,FOH,Yes,1
+Head Chef,full-time,7606618193,new york,brooklyn,3,Man,c,BOH,,0
+Host/Hostess,part-time,7606617280,new york,manhattan,2,Woman,s,FOH,,0
+Server,employee's choice,7606616076,new york,brooklyn,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607127326,new york,brooklyn,3,Man,c,BOH,,0
+Barista,full-time,7607117026,new york,manhattan,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7607110772,new york,manhattan,6,Nonbinary,c,BOH,Yes,1
+Server,full-time,7607106494,new york,brooklyn,1,Man,s,FOH,,0
+Host/Hostess,part-time,7607100724,new york,manhattan,2,Woman,s,FOH,,0
+Server,part-time,7607096871,new york,brooklyn,5,Nonbinary,s,FOH,,0
+Manager,full-time,7607093271,new york,brooklyn,1,Man,s,FOH,,0
+Server,employee's choice,7607090972,new york,manhattan,2,Woman,s,FOH,,0
+Server,employee's choice,7607105866,chicago,northwest suburbs,1,Man,s,FOH,Yes,1
+Line Cook,full-time,7607099265,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Host/Hostess,employee's choice,7607048028,chicago,south chicagoland,5,Nonbinary,s,FOH,Yes,1
+Busser,part-time,7606932893,chicago,city of chicago,1,Man,s,FOH,,0
+Bartender,full-time,7606885313,chicago,south chicagoland,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606874482,chicago,south chicagoland,6,Nonbinary,c,BOH,Yes,1
+Cashier,employee's choice,7606869559,chicago,northwest suburbs,1,Man,s,FOH,,0
+Manager,full-time,7606829209,chicago,city of chicago,2,Woman,s,FOH,,0
+Server,employee's choice,7606778327,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Cashier,employee's choice,7606753781,chicago,city of chicago,1,Man,s,FOH,,0
+BOH,employee's choice,7606724098,chicago,city of chicago,4,Woman,c,BOH,,0
+Line Cook,full-time,7607153267,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7606669076,chicago,city of chicago,1,Man,s,FOH,Yes,1
+Server,full-time,7606628546,chicago,north chicagoland,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606604022,chicago,northwest suburbs,6,Nonbinary,c,BOH,Yes,1
+Bartender,part-time,7606572134,chicago,city of chicago,1,Man,s,FOH,,0
+Busser,full-time,7606520172,chicago,north chicagoland,2,Woman,s,FOH,,0
+BOH,employee's choice,7606488850,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Host/Hostess,part-time,7606484822,chicago,city of chicago,5,Nonbinary,s,FOH,Yes,1
+Server,full-time,7606461520,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607204297,new york,manhattan,3,Man,c,BOH,,0
+Server,full-time,7607204209,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7607202663,new york,bronx,6,Nonbinary,c,BOH,,0
+Line Cook,employee's choice,7607195702,new york,westchester,3,Man,c,BOH,,0
+Line Cook,full-time,7607192983,new york,manhattan,4,Woman,c,BOH,,0
+Server,full-time,7607186595,new york,manhattan,5,Nonbinary,s,FOH,,0
+BOH,full-time,7607173699,new york,staten island,1,Man,s,FOH,Yes,1
+Line Cook,full-time,7607161845,new york,manhattan,4,Woman,c,BOH,Yes,1
+Server,part-time,7607158407,new york,manhattan,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607152977,new york,brooklyn,3,Man,c,BOH,,0
+BOH,employee's choice,7607150624,new york,manhattan,2,Woman,s,FOH,,0
+BOH,full-time,7607140107,new york,manhattan,6,Nonbinary,c,BOH,,0
+Line Cook,part-time,7607138259,new york,brooklyn,3,Man,c,BOH,Yes,1
+Server,full-time,7607132196,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7607129536,new york,manhattan,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7607083388,new york,brooklyn,3,Man,c,BOH,,0
+Server,full-time,7607082421,new york,manhattan,2,Woman,s,FOH,,0
+Line Cook,full-time,7607156959,chicago,city of chicago,3,Man,c,BOH,Yes,1
+Server,employee's choice,7606440019,chicago,city of chicago,2,Woman,s,FOH,,0
+Host/Hostess,full-time,7606436554,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Cashier,full-time,7606423915,chicago,city of chicago,1,Man,s,FOH,,0
+Line Cook,full-time,7606415870,chicago,city of chicago,4,Woman,c,BOH,,0
+Help,employee's choice,7606412250,chicago,city of chicago,5,Nonbinary,s,FOH,Yes,1
+Head Chef,full-time,7606397095,chicago,northwest suburbs,3,Man,c,BOH,,0
+Line Cook,full-time,7606375334,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Host/Hostess,employee's choice,7606332926,chicago,west chicagoland,6,Nonbinary,c,BOH,,0
+Chef,full-time,7606288850,chicago,city of chicago,3,Man,c,BOH,,0
+Line Cook,full-time,7606286163,chicago,city of chicago,4,Woman,c,BOH,,0
+Server,part-time,7606264704,chicago,northwest suburbs,5,Nonbinary,s,FOH,,0
+BOH,employee's choice,7606249983,chicago,city of chicago,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7606247691,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+FOH,employee's choice,7606182172,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+FOH,employee's choice,7606150683,chicago,city of chicago,1,Man,s,FOH,,0
+Barista,full-time,7607287875,south florida,broward county,1,Man,s,FOH,Yes,1
+Host/Hostess,employee's choice,7607235501,south florida,broward county,2,Woman,s,FOH,,0
+BOH,full-time,7607052829,south florida,broward county,6,Nonbinary,s,FOH,Yes,1
+BOH,employee's choice,7606902126,south florida,broward county,1,Man,s,FOH,,0
+Line Cook,full-time,7606810353,south florida,broward county,4,Woman,c,BOH,,0
+BOH,full-time,7606795590,south florida,broward county,6,Nonbinary,c,BOH,,0
+Help,employee's choice,7606756293,south florida,broward county,1,Man,s,FOH,,0
+Line Cook,full-time,7606723430,south florida,broward county,4,Woman,c,BOH,,0
+Line Cook,full-time,7606715726,south florida,broward county,6,Nonbinary,c,BOH,,0
+Host/Hostess,full-time,7606436977,south florida,broward county,3,Man,c,BOH,,0
+Line Cook,full-time,7606416125,south florida,broward county,4,Woman,c,BOH,,0
+FOH,full-time,7607427111,south florida,palm beach co,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607419130,chicago,south chicagoland,3,Man,c,BOH,,0
+Line Cook,full-time,7607402596,chicago,city of chicago,4,Woman,c,BOH,,0
+BOH,full-time,7607334098,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7607233114,chicago,west chicagoland,3,Man,c,BOH,,0
+Line Cook,full-time,7606149179,chicago,south chicagoland,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7606113411,chicago,city of chicago,6,Nonbinary,c,BOH,Yes,1
+Manager,full-time,7606106764,chicago,city of chicago,1,Man,s,FOH,,0
+BOH,full-time,7606066426,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Server,part-time,7606047420,chicago,city of chicago,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7602962941,SF bay area,north bay,3,Man,c,BOH,,0
+Barista,full-time,7607439902,SF bay area,san francisco,2,Woman,s,FOH,Yes,1
+Server,part-time,7607365636,SF bay area,santa cruz,1,Man,s,FOH,,0
+Chef,full-time,7607362639,SF bay area,south bay,4,Woman,c,BOH,,0
+Server,full-time,7607352504,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Help,employee's choice,7607344494,SF bay area,east bay,1,Man,s,FOH,Yes,1
+Chef,part-time,7607339400,SF bay area,san francisco,2,Woman,s,FOH,,0
+Server,employee's choice,7607326365,SF bay area,east bay,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607320867,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Server,part-time,7607315028,SF bay area,east bay,2,Woman,s,FOH,,0
+Host/Hostess,part-time,7607313541,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Line Cook,employee's choice,7607278792,SF bay area,east bay,3,Man,c,BOH,,0
+Chef,full-time,7607277891,SF bay area,peninsula,4,Woman,c,BOH,Yes,1
+Bartender,part-time,7607270039,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Chef,full-time,7607262066,SF bay area,south bay,3,Man,c,BOH,,0
+Server,part-time,7607256471,SF bay area,san francisco,2,Woman,s,FOH,,0
+Line Cook,full-time,7607187382,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7607174777,SF bay area,san francisco,3,Man,c,BOH,Yes,1
+Barista,full-time,7607111802,SF bay area,san francisco,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606995683,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+BOH,part-time,7606799134,SF bay area,san francisco,1,Man,s,FOH,,0
+Server,part-time,7606795227,SF bay area,san francisco,2,Woman,s,FOH,,0
+Line Cook,full-time,7606632354,SF bay area,san francisco,6,Nonbinary,c,BOH,,0
+Bartender,employee's choice,7606625958,SF bay area,san francisco,2,Woman,s,FOH,,0
+Server,employee's choice,7606625815,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Barista,part-time,7606624950,SF bay area,san francisco,1,Man,s,FOH,,0
+Help,employee's choice,7607319940,portland,washington co,1,Man,s,FOH,Yes,1
+Line Cook,part-time,7607279984,portland,washington co,4,Woman,c,BOH,Yes,1
+Line Cook,part-time,7607279804,portland,clark/cowlitz,6,Nonbinary,c,BOH,,0
+Server,full-time,7607239610,portland,washington co,1,Man,s,FOH,,0
+Chef,full-time,7607231268,portland,yamhill co,4,Woman,c,BOH,,0
+BOH,full-time,7607174750,portland,multnomah co,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7607168223,portland,multnomah co,3,Man,c,BOH,Yes,1
+Bartender,employee's choice,7607091596,portland,clark/cowlitz,4,Woman,c,BOH,,0
+Line Cook,part-time,7606991210,portland,multnomah co,6,Nonbinary,c,BOH,,0
+BOH,employee's choice,7606967566,portland,multnomah co,3,Man,c,BOH,Yes,1
+Line Cook,part-time,7606963582,portland,multnomah co,4,Woman,c,BOH,Yes,1
+Bartender,part-time,7606925294,portland,multnomah co,6,Nonbinary,c,BOH,,0
+Help,employee's choice,7606877157,portland,clark/cowlitz,1,Man,s,FOH,,0
+Barista,employee's choice,7606816584,portland,washington co,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7606813556,portland,clackamas co,6,Nonbinary,c,BOH,Yes,1
+Line Cook,full-time,7606791327,portland,multnomah co,3,Man,c,BOH,Yes,1
+Line Cook,part-time,7606790884,portland,clark/cowlitz,4,Woman,c,BOH,,0
+Chef,contract,7606783452,portland,clackamas co,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7606782081,portland,multnomah co,3,Man,c,BOH,,0
+Line Cook,part-time,7606776631,portland,clackamas co,4,Woman,c,BOH,Yes,1
+FOH,full-time,7606761231,portland,multnomah co,5,Nonbinary,s,FOH,,0
+Chef,employee's choice,7606620404,portland,multnomah co,3,Man,c,BOH,,0
+Server,full-time,7607410333,south florida,broward county,1,Man,s,FOH,,0
+Chef,full-time,7607402796,south florida,palm beach co,3,Man,c,BOH,,0
+BOH,full-time,7607383774,south florida,miami / dade,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7607166968,south florida,palm beach co,6,Nonbinary,c,BOH,,0
+FOH,full-time,7607165010,south florida,miami / dade,1,Man,s,FOH,,0
+Line Cook,full-time,7607157436,south florida,palm beach co,4,Woman,c,BOH,,0
+Manager,full-time,7607146023,south florida,miami / dade,5,Nonbinary,s,FOH,Yes,1
+Server,full-time,7607096150,south florida,miami / dade,1,Man,s,FOH,,0
+BOH,employee's choice,7607094251,south florida,palm beach co,4,Woman,c,BOH,,0
+Server,full-time,7607064669,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+BOH,full-time,7607051133,south florida,palm beach co,3,Man,c,BOH,,0
+Server,employee's choice,7607043135,south florida,palm beach co,2,Woman,s,FOH,,0
+BOH,employee's choice,7607032177,south florida,palm beach co,6,Nonbinary,c,BOH,,0
+Host/Hostess,employee's choice,7606925221,south florida,miami / dade,1,Man,s,FOH,,0
+Server,part-time,7606761638,south florida,miami / dade,2,Woman,s,FOH,,0
+Help,full-time,7606755869,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+BOH,full-time,7606726764,south florida,palm beach co,3,Man,c,BOH,,0
+Help,full-time,7606641642,south florida,miami / dade,2,Woman,s,FOH,,0
+Cashier,employee's choice,7606619505,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+Server,part-time,7604484831,SF bay area,san francisco,1,Man,s,FOH,Yes,1
+Host/Hostess,part-time,7607686317,SF bay area,santa cruz,2,Woman,s,FOH,Yes,1
+BOH,full-time,7607674876,SF bay area,east bay,6,Nonbinary,c,BOH,Yes,1
+BOH,full-time,7607672294,SF bay area,san francisco,1,Man,s,FOH,,0
+BOH,employee's choice,7607645804,SF bay area,san francisco,2,Woman,s,FOH,,0
+Server,full-time,7607644585,SF bay area,san francisco,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7607640026,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Head Chef,full-time,7607619306,SF bay area,north bay,4,Woman,c,BOH,,0
+Line Cook,part-time,7607610089,SF bay area,south bay,6,Nonbinary,c,BOH,Yes,1
+FOH,part-time,7607600540,SF bay area,north bay,3,Man,c,BOH,Yes,1
+Busser,part-time,7607585399,SF bay area,north bay,2,Woman,s,FOH,,0
+Line Cook,full-time,7607542022,SF bay area,north bay,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7607482203,SF bay area,north bay,1,Man,s,FOH,,0
+Line Cook,part-time,7607113433,SF bay area,north bay,4,Woman,c,BOH,Yes,1
+Server,employee's choice,7607652348,atlanta,otp north,1,Man,s,FOH,,0
+Line Cook,full-time,7607595592,atlanta,atlanta,4,Woman,c,BOH,Yes,1
+Host/Hostess,full-time,7607569633,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+Server,full-time,7607531377,atlanta,atlanta,1,Man,s,FOH,Yes,1
+BOH,full-time,7607452578,atlanta,otp north,4,Woman,c,BOH,,0
+BOH,full-time,7607414919,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+BOH,full-time,7607319481,atlanta,atlanta,3,Man,s,FOH,,0
+Line Cook,employee's choice,7607260066,atlanta,atlanta,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7607239282,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7607186692,atlanta,otp north,3,Man,c,BOH,Yes,1
+BOH,contract,7606893139,atlanta,otp east,2,Woman,s,FOH,Yes,1
+Server,employee's choice,7606766931,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+BOH,part-time,7607647632,south florida,miami / dade,3,Man,c,BOH,,0
+Host/Hostess,part-time,7607646792,south florida,miami / dade,2,Woman,s,FOH,,0
+Server,full-time,7607627449,south florida,miami / dade,5,Nonbinary,s,FOH,Yes,1
+Manager,full-time,7607605476,south florida,palm beach co,3,Man,c,BOH,,0
+Server,part-time,7607551903,south florida,miami / dade,2,Woman,s,FOH,,0
+Line Cook,employee's choice,7607524181,south florida,miami / dade,6,Nonbinary,c,BOH,,0
+Server,full-time,7607515663,south florida,miami / dade,1,Man,s,FOH,,0
+Line Cook,full-time,7607515325,south florida,miami / dade,4,Woman,c,BOH,,0
+BOH,full-time,7607502996,south florida,broward county,6,Nonbinary,c,BOH,,0
+BOH,full-time,7607497427,south florida,miami / dade,3,Man,c,BOH,Yes,1
+Sous Chef,full-time,7607494047,south florida,miami / dade,4,Woman,c,BOH,,0
+BOH,full-time,7607485271,south florida,broward county,6,Nonbinary,c,BOH,,0
+BOH,full-time,7606510594,south florida,palm beach co,6,Nonbinary,c,BOH,,0
+Server,full-time,7606504673,south florida,miami / dade,1,Man,s,FOH,,0
+Server,full-time,7606472415,south florida,palm beach co,2,Woman,s,FOH,,0
+BOH,part-time,7606447464,south florida,miami / dade,6,Nonbinary,c,BOH,Yes,1
+Head Chef,full-time,7606441615,south florida,palm beach co,3,Man,c,BOH,,0
+Server,full-time,7606370472,south florida,miami / dade,2,Woman,s,FOH,,0
+Line Cook,full-time,7606336794,south florida,palm beach co,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7606310060,south florida,miami / dade,3,Man,c,BOH,,0
+Line Cook,full-time,7606308710,south florida,broward county,4,Woman,c,BOH,,0
+Line Cook,full-time,7606303195,south florida,broward county,6,Nonbinary,c,BOH,,0
+Cashier,full-time,7606271287,south florida,broward county,1,Man,s,FOH,Yes,1
+BOH,full-time,7606266523,south florida,miami / dade,4,Woman,c,BOH,,0
+Server,part-time,7606137196,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+Line Cook,part-time,7609468192,portland,multnomah co,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7609467121,portland,multnomah co,4,Woman,c,BOH,,0
+Bartender,part-time,7609452600,portland,clark/cowlitz,5,Nonbinary,s,FOH,,0
+FOH,full-time,7609421934,portland,clackamas co,1,Man,s,FOH,Yes,1
+Line Cook,part-time,7609374820,portland,clackamas co,4,Woman,c,BOH,Yes,1
+BOH,full-time,7609352357,portland,washington co,1,Man,s,FOH,Yes,1
+Sous Chef,full-time,7609337690,portland,multnomah co,4,Woman,c,BOH,,0
+Chef,part-time,7609325524,portland,clark/cowlitz,6,Nonbinary,c,BOH,Yes,1
+Line Cook,full-time,7609265264,portland,yamhill co,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7609200961,portland,clark/cowlitz,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7609198435,portland,multnomah co,6,Nonbinary,c,BOH,,0
+Line Cook,part-time,7609126487,portland,multnomah co,3,Man,c,BOH,Yes,1
+BOH,employee's choice,7609004793,portland,clackamas co,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7608982021,portland,clackamas co,6,Nonbinary,c,BOH,,0
+Server,part-time,7608924858,portland,multnomah co,1,Man,s,FOH,,0
+Server,employee's choice,7608914104,portland,multnomah co,2,Woman,s,FOH,,0
+Line Cook,full-time,7608786213,portland,clackamas co,6,Nonbinary,c,BOH,,0
+Line Cook,full-time,7608699986,portland,clackamas co,3,Man,c,BOH,,0
+Line Cook,part-time,7608697505,portland,multnomah co,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7608644920,portland,clackamas co,6,Nonbinary,c,BOH,Yes,1
+Barista,part-time,7609616837,chicago,city of chicago,1,Man,s,FOH,,0
+Server,employee's choice,7609615072,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Line Cook,part-time,7609610106,chicago,northwest suburbs,6,Nonbinary,c,BOH,Yes,1
+Server,part-time,7609594617,chicago,city of chicago,1,Man,s,FOH,Yes,1
+Server,part-time,7609576883,chicago,north chicagoland,2,Woman,s,FOH,,0
+Host/Hostess,part-time,7609576755,chicago,north chicagoland,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7609572319,chicago,city of chicago,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7609570225,chicago,north chicagoland,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7609465808,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Server,full-time,7609460343,chicago,north chicagoland,3,Man,c,BOH,,0
+Line Cook,full-time,7609433324,chicago,south chicagoland,4,Woman,c,BOH,,0
+Line Cook,full-time,7609415123,chicago,north chicagoland,6,Nonbinary,c,BOH,,0
+Chef,part-time,7609396822,chicago,north chicagoland,3,Man,c,BOH,Yes,1
+Line Cook,full-time,7609387630,chicago,city of chicago,4,Woman,c,BOH,Yes,1
+Server,full-time,7609351694,chicago,city of chicago,5,Nonbinary,s,FOH,Yes,1
+Server,part-time,7609297473,chicago,city of chicago,1,Man,s,FOH,Yes,1
+BOH,full-time,7609266598,chicago,city of chicago,2,Woman,s,FOH,,0
+Sous Chef,full-time,7609262210,chicago,city of chicago,6,Nonbinary,c,BOH,Yes,1
+Host/Hostess,full-time,7609229023,chicago,north chicagoland,1,Man,s,FOH,,0
+Host/Hostess,full-time,7609204696,chicago,north chicagoland,2,Woman,s,FOH,,0
+Line Cook,part-time,7609038467,chicago,city of chicago,6,Nonbinary,c,BOH,,0
+Server,employee's choice,7609521164,atlanta,atlanta,1,Man,s,FOH,Yes,1
+Line Cook,part-time,7609260288,atlanta,atlanta,4,Woman,c,BOH,,0
+BOH,full-time,7609255444,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+Bartender,full-time,7609185330,atlanta,atlanta,1,Man,s,FOH,,0
+BOH,full-time,7609159443,atlanta,otp east,4,Woman,c,BOH,,0
+Help,part-time,7608988909,atlanta,atlanta,5,Nonbinary,s,FOH,Yes,1
+Chef,full-time,7608939106,atlanta,otp north,3,Man,c,BOH,,0
+Line Cook,part-time,7608868693,atlanta,otp north,4,Woman,c,BOH,Yes,1
+Line Cook,full-time,7608855013,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+BOH,part-time,7608596280,atlanta,atlanta,1,Man,s,FOH,Yes,1
+Line Cook,full-time,7608446937,atlanta,atlanta,4,Woman,c,BOH,Yes,1
+Server,full-time,7608357378,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+FOH,employee's choice,7608145284,atlanta,atlanta,1,Man,s,FOH,Yes,1
+BOH,employee's choice,7608094034,atlanta,atlanta,4,Woman,c,BOH,,0
+Line Cook,full-time,7608024763,atlanta,atlanta,6,Nonbinary,c,BOH,,0
+Sous Chef,full-time,7608019072,atlanta,atlanta,3,Man,c,BOH,,0
+Line Cook,employee's choice,7608015243,atlanta,atlanta,4,Woman,c,BOH,,0
+Line Cook,employee's choice,7608014115,atlanta,atlanta,6,Nonbinary,c,BOH,Yes,1
+Server,employee's choice,7608013951,atlanta,atlanta,1,Man,s,FOH,Yes,1
+BOH,full-time,7607968218,atlanta,atlanta,4,Woman,c,BOH,,0
+Host/Hostess,full-time,7607948653,atlanta,atlanta,5,Nonbinary,s,FOH,,0
+Server,part-time,7609636088,new york,queens,1,Man,s,FOH,,0
+BOH,employee's choice,7609633918,new york,staten island,4,Woman,c,BOH,,0
+Line Cook,part-time,7609628547,new york,manhattan,6,Nonbinary,c,BOH,,0
+Barista,part-time,7609628413,new york,brooklyn,1,Man,s,FOH,Yes,1
+FOH,full-time,7609619984,new york,manhattan,3,Man,c,BOH,,0
+Sous Chef,full-time,7609610797,new york,new jersey,4,Woman,c,BOH,Yes,1
+Barsita,employee's choice,7609599143,new york,manhattan,5,Nonbinary,s,FOH,,0
+FOH,employee's choice,7609592468,new york,manhattan,1,Man,s,FOH,,0
+Server,part-time,7609588119,new york,brooklyn,2,Woman,s,FOH,Yes,1
+Line Cook,full-time,7609582397,new york,manhattan,6,Nonbinary,c,BOH,Yes,1
+FOH,full-time,7609568362,new york,manhattan,1,Man,s,FOH,Yes,1
+Line Cook,employee's choice,7609562502,new york,manhattan,4,Woman,c,BOH,,0
+Server,employee's choice,7609559524,new york,brooklyn,5,Nonbinary,s,FOH,,0
+Line Cook,full-time,7609556571,new york,brooklyn,3,Man,c,BOH,,0
+Bartender,full-time,7609554442,new york,brooklyn,2,Woman,s,FOH,,0
+Server,employee's choice,7609554007,new york,manhattan,5,Nonbinary,s,FOH,,0
+Server,employee's choice,7609551221,new york,brooklyn,1,Man,s,FOH,,0
+Line Cook,full-time,7609546124,new york,manhattan,4,Woman,c,BOH,,0
+Line Cook,full-time,7609545751,new york,manhattan,6,Nonbinary,c,BOH,,0
+Waiter,employee's choice,7609527484,new york,manhattan,1,Man,s,FOH,,0
+Bartender,full-time,7609526098,new york,brooklyn,2,Woman,s,FOH,,0
+Host/Hostess,full-time,7609617045,south florida,miami / dade,1,Man,s,FOH,Yes,1
+BOH,full-time,7609454512,south florida,miami / dade,4,Woman,c,BOH,,0
+Bartender,employee's choice,7609450014,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+Busser,part-time,7609400278,south florida,miami / dade,1,Man,s,FOH,Yes,1
+Help,full-time,7609385975,south florida,miami / dade,4,Woman,c,BOH,,0
+BOH,part-time,7609372034,south florida,palm beach co,6,Nonbinary,c,BOH,,0
+Line Cook,employee's choice,7609352407,south florida,broward county,3,Man,c,BOH,,0
+Line Cook,employee's choice,7609351749,south florida,palm beach co,4,Woman,c,BOH,Yes,1
+Host/Hostess,part-time,7609342987,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+FOH,part-time,7609341315,south florida,miami / dade,1,Man,s,FOH,,0
+Help,employee's choice,7609299175,south florida,palm beach co,2,Woman,s,FOH,Yes,1
+Server,full-time,7609198700,south florida,miami / dade,5,Nonbinary,s,FOH,,0
+Cashier,part-time,7609185854,south florida,broward county,1,Man,s,FOH,,0
+Line Cook,full-time,7609183704,south florida,miami / dade,4,Woman,c,BOH,,0
+Cashier,employee's choice,7609099789,south florida,miami / dade,5,Nonbinary,s,FOH,Yes,1
+Line Cook,full-time,7609068178,south florida,miami / dade,3,Man,c,BOH,Yes,1
+Server,part-time,7609031388,south florida,broward county,2,Woman,s,FOH,,0
+Line Cook,full-time,7609028080,south florida,palm beach co,6,Nonbinary,c,BOH,Yes,1
+Server,full-time,7608999220,south florida,broward county,5,Nonbinary,s,FOH,,0
+Host/Hostess,full-time,7608878312,south florida,palm beach co,1,Man,s,FOH,Yes,1

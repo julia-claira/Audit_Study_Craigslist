@@ -1,0 +1,84 @@
+---
+title: "Power Analysis"
+author: "Chris McClure-St. Amant"
+date: '2023-02-18'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(data.table)
+install.packages('sandwich')
+library(sandwich)
+install.packages('lmtest')
+library(lmtest)
+
+library(ggplot2)
+```
+
+```{r}
+analyze_power <- function(control_response_rate, treatment_response_rate, n, num_loops, treat_proportion=0.5){
+  # treatment and control response rates as decimal proportion (i.e., 0.5 for 50%)
+  # treat_proportion also as decimal proportion
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_size <- round(n * treat_proportion, 0)
+    ctrl_size <- n - treat_size
+    treat_x <- rep(1, treat_size)
+    ctrl_x <- rep(0, ctrl_size)
+    treat_y <- rbinom(treat_size, 1, treatment_response_rate)
+    ctrl_y <- rbinom(ctrl_size, 1, control_response_rate)
+    d <- data.table(condition = c(treat_x, ctrl_x), outcome = c(treat_y, ctrl_y))
+    
+    # make the linear model and extract the p-value
+    mod <- lm(outcome ~ condition, data = d)
+    p_vals[i] <- summary(mod)$coefficients[2, 4]
+    #print(summary(mod))
+  
+  }
+  
+  # return proportion of p values <= .05
+  #print(p_vals)
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  # I set na.rm to TRUE because in smaller sample sizes with small response  
+  # rates, the regression often returns NA for the coefficient. I think this 
+  # is because the entire treatment or control y vector can have no 1s in it
+  # when response rates and sample sizes are small
+  
+}
+
+analyze_power(0.5, 0.6, 200, 1000, 0.5)
+```
+
+
+```{r}
+plot_power <- function(sample_size_vector, ctrl_response_rate, treat_response_rate){
+  # initialize a data.table for the data
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  # run the power analysis and add the data to the table
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power(ctrl_response_rate, treat_response_rate, sample_size_vector[i], 1000, 0.5)
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+  
+  ggplot(data=dt, aes(x=sample_size, y=power)) +
+    geom_point() +
+    # we can always drop the smooth line, I like it to see trends but it can be distracting
+    geom_smooth()
+  
+}
+```
+
+```{r}
+samples <- seq(40, 400, 10)
+plot_power(samples, 0.08, 0.05)
+
+```

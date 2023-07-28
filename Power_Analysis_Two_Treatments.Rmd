@@ -1,0 +1,115 @@
+---
+title: "Power Analysis Blocking"
+author: "Chris McClure-St. Amant -- amended by Sunayna"
+date: '2023-02-20'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r}
+library(data.table)
+library(sandwich)
+library(lmtest)
+library(ggplot2)
+```
+
+```{r}
+analyze_power_two_treatments <- function(control_response_rate, treatment1_response_rate,treatment2_response_rate, n, num_loops, control_proportion=0.33, treat_proportion_1=0.33, treat_proportion_2=0.33){
+  # treatment and control response rates as decimal proportion (i.e., 0.5 for 50%)
+  # treat_proportion also as decimal proportion
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_1_size <- round(n * treat_proportion_1, 0)
+    treat_2_size <- round(n * treat_proportion_2, 0)
+    ctrl_size <- n - (treat_1_size + treat_2_size)
+    treat1_x <- rep(1, treat_1_size)
+    treat2_x <- rep(1, treat_2_size)
+    ctrl_x <- rep(0, ctrl_size)
+    group_treat1<-rep(c('treat1'), treat_1_size)
+    group_treat2<-rep(c('treat2'), treat_2_size)
+    group_ctrl<-rep(c('control'), ctrl_size)
+    treat1_y <- rbinom(treat_1_size, 1, treatment1_response_rate)
+    treat2_y <- rbinom(treat_2_size, 1, treatment2_response_rate)
+    ctrl_y <- rbinom(ctrl_size, 1, control_response_rate)
+    d <- data.table(outcome = c(treat1_y,treat2_y, ctrl_y), group=c(group_treat1, group_treat2, group_ctrl))
+    # make the linear model and extract the p-value
+    mod <- lm(outcome ~ group, data = d)
+    s<- summary(mod)
+    # calculate the p values and add to the list
+    p_vals[i] <- pf(s$fstatistic[1], s$fstatistic[2], s$fstatistic[3], lower.tail = FALSE)
+
+  }
+  
+  # return proportion of p values <= .05
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  # I set na.rm to TRUE because in smaller sample sizes with small response  
+  # rates, the regression often returns NA for the coefficient. I think this 
+  # is because the entire treatment or control y vector can have no 1s in it
+  # when response rates and sample sizes are small
+}
+
+control_response_rate=.30
+treatment1_response_rate=.30
+treatment2_response_rate=.25
+samples=639
+loops=10
+control_proportion=0.33
+treat_1_proportion=0.33
+treat_2_proportion=.33
+
+analyze_power_two_treatments(control_response_rate,
+                       treatment1_response_rate,
+                       treatment2_response_rate,
+                       samples, loops, ctrl_proportion, 
+                       treat_1_proportion,
+                       treat_2_proportion)
+
+```
+
+
+```{r}
+plot_power_two_treatments <- function(sample_size_vector,
+                      ctrl_response_rate, treat1_response_rate, treat2_response_rate, ctrl_proportion, treat_1_proportion, treat_2_proportion){
+  # initialize a data.table for the data
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  # run the power analysis and add the data to the table
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power_two_treatments(ctrl_response_rate, treat1_response_rate,
+                    treat2_response_rate,
+                    sample_size_vector[i], 1000, ctrl_proportion, treat_1_proportion, treat_2_proportion)
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+  
+  ggplot(data=dt, aes(x=sample_size, y=power)) +
+    geom_point() +
+    # we can always drop the smooth line, I like it to see trends but it can be distracting
+    geom_smooth()
+}
+
+```
+
+```{r}
+
+samples <- seq(600, 10000, 50)
+
+
+control_response_rate=.30
+treatment1_response_rate=.30
+treatment2_response_rate=.25
+ctrl_prop=.33
+t1_prop=.33
+t2_prop=.33
+
+plot_power_two_treatments(samples, control_response_rate,
+                    treatment1_response_rate,
+                    treatment2_response_rate, ctrl_prop, t1_prop, t2_prop)
+```

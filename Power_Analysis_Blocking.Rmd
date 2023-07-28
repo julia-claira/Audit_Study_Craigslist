@@ -1,0 +1,288 @@
+---
+title: "Power Analysis - Implicit Gender Bias in Online-Hiring Experiment"
+author: "Chris McClure-St. Sunayna Jain, J. Claira Kauffmann, Edward Junprung"
+date: '2023-02-18'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+```{r include=FALSE}
+library(data.table)
+install.packages('sandwich')
+library(sandwich)
+install.packages('lmtest')
+library(lmtest)
+
+library(ggplot2)
+```
+
+```{r include=FALSE}
+analyze_power <- function(control_response_rate, treatment_response_rate, n, num_loops, treat_proportion=0.5){
+  # treatment and control response rates as decimal proportion (i.e., 0.5 for 50%)
+  # treat_proportion also as decimal proportion
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_size <- round(n * treat_proportion, 0)
+    ctrl_size <- n - treat_size
+    treat_x <- rep(1, treat_size)
+    ctrl_x <- rep(0, ctrl_size)
+    treat_y <- rbinom(treat_size, 1, treatment_response_rate)
+    ctrl_y <- rbinom(ctrl_size, 1, control_response_rate)
+    d <- data.table(condition = c(treat_x, ctrl_x), outcome = c(treat_y, ctrl_y))
+    
+    # make the linear model and extract the p-value
+    mod <- lm(outcome ~ condition, data = d)
+    p_vals[i] <- summary(mod)$coefficients[2, 4]
+    #print(summary(mod))
+  
+  }
+  
+  # return proportion of p values <= .05
+  #print(p_vals)
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  
+}
+
+```
+
+```{r include=FALSE}
+analyze_power_two_treatments <- function(control_response_rate, treatment1_response_rate,
+                          treatment2_response_rate, n, num_loops, treat_proportion=0.33){
+  # treatment and control response rates as decimal proportion (i.e., 0.5 for 50%)
+  # treat_proportion also as decimal proportion
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_size <- round(n * treat_proportion, 0)
+    ctrl_size <- n - 2* treat_size
+    treat1_x <- rep(1, treat_size)
+    treat2_x <- rep(1, treat_size)
+    ctrl_x <- rep(0, ctrl_size)
+    group_treat1<-rep(c('treat1'), treat_size)
+    group_treat2<-rep(c('treat2'), treat_size)
+    group_ctrl<-rep(c('control'), ctrl_size)
+    treat1_y <- rbinom(treat_size, 1, treatment1_response_rate)
+    treat2_y <- rbinom(treat_size, 1, treatment2_response_rate)
+    ctrl_y <- rbinom(ctrl_size, 1, control_response_rate)
+    d <- data.table(outcome = c(treat1_y,treat2_y, ctrl_y), group=c(group_treat1, group_treat2, group_ctrl))
+    # make the linear model and extract the p-value
+    mod <- lm(outcome ~ group, data = d)
+    s<- summary(mod)
+
+    # calculate the p values and add to the list
+    p_vals[i] <- pf(s$fstatistic[1], s$fstatistic[2], s$fstatistic[3], lower.tail = FALSE)
+
+  }
+  
+  # return proportion of p values <= .05
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  
+  # I set na.rm to TRUE because in smaller sample sizes with small response  
+  # rates, the regression often returns NA for the coefficient. I think this 
+  # is because the entire treatment or control y vector can have no 1s in it
+  # when response rates and sample sizes are small
+  
+}
+
+control_response_rate=.20
+treatment1_response_rate=.18
+treatment2_response_rate=.16
+samples=200
+loops=10
+treat_proportion=0.33
+
+analyze_power_two_treatments(control_response_rate,
+                       treatment1_response_rate,
+                       treatment2_response_rate,
+                       samples, loops, treat_proportion)
+```
+
+```{r include=TRUE}
+#This is the code for Scenario 3 - blocking.
+#Scenario 2 and 1 used a condensed version of this code, pulling the p-values for
+#the treatment coefficients.
+
+analyze_power_blocking <- function(control_response_rate_low, treatment_response_rate_low,
+                          control_response_rate_high, treatment_response_rate_high,
+                          n, num_loops, treat_proportion=0.5){
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_size <- round(n * treat_proportion, 0)
+    ctrl_size <- n - treat_size
+    treat_x <- rep(1, treat_size)
+    ctrl_x <- rep(0, ctrl_size)
+    group_treat_low<-(rep(c('low_wage'),ceiling(treat_size/2)))
+    group_treat_high<-(rep(c('high_wage'),floor(treat_size/2)))
+    group_ctrl_low<-(rep(c('low_wage'),ceiling(ctrl_size/2)))
+    group_ctrl_high<-(rep(c('high_wage'),floor(ctrl_size/2)))
+    treat_y_low <- rbinom(ceiling(treat_size/2), 1, treatment_response_rate_low)
+    treat_y_high <- rbinom(floor(treat_size/2), 1, treatment_response_rate_high)
+    ctrl_y_low <- rbinom(ceiling(ctrl_size/2), 1, control_response_rate_low)
+    ctrl_y_high <- rbinom(floor(ctrl_size/2), 1, control_response_rate_high)
+    
+    #create a table
+    d <- data.table(condition = c(treat_x, ctrl_x), 
+                    outcome = c(treat_y_low,treat_y_high,
+                    ctrl_y_low,ctrl_y_high), group=c(group_treat_low, group_treat_high,
+                                                     group_ctrl_low,group_ctrl_high))
+    # make the linear model
+    mod <- lm(outcome ~ condition + as.factor(group), data = d)
+    s<- summary(mod)
+    
+    # calculate the f-test p-value and add to the vector
+    p_vals[i] <- pf(s$fstatistic[1], s$fstatistic[2], s$fstatistic[3], lower.tail = FALSE)
+  }
+  # return proportion of p values <= .05
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  
+  
+}
+```
+**Scenario 1:**
+We plan to apply to jobs posted online, and record the number of positive responses for female candidates (treatment) versus male candidates (control). 'Positive response' is defined as a follow-up email asking for an interview. For our baseline response rate, we referenced CareerPlug’s third annual Recruiting Metrics Report, which found an average applicant-to-interview conversion rate between 15-20%. ^[https://www.careerplug.com/wp-content/uploads/2022/03/2022-Recruiting-Metrics-Report.pdf]
+
+For our estimated treatment effect (resumes from females), we saw studies that found no implicit gender bias in hiring accross the spectrum of industries. However, certain industries such as tech are male domminated, and we believe that this implicit bias could bleed in certain fields. ^[https://www.science.org/content/article/science-still-seen-male-profession-according-international-study-gender-bias] So, for this senario we estimated a -8% ATE when women apply to tech related jobs, which we simulated by pulling from a binomial distributioon (1 for a positive response; 0 for no response).
+
+lm(outcome ~ condition); ATE -8%
+
+**Scenario 2:**
+
+Aas mentioned above, one study found little to no evidence of implicit gender bias, however it focused on the international market, whereas we are only concerned with the US job market. ^[https://academic.oup.com/esr/article/38/3/337/6412759] Still, this gives us reason to believe that our ATE in scenario 1 may be too big. This concern is heightened by a more conservative statistic on applcation-success-rate of 2 to 3.4%. ^[https://www.prosperityforamerica.org/resume-statistics]. So, for scenario 2, we analyzed the power of our model with a more conservative ATE.
+
+lm(outcome ~ condition); ATE -4%
+
+**Scenario 3:** 
+
+There is a possibility that gender bias could vary depending on the industry. In one study, they found that "female applicants were favoured in female-dominated occupations...." ^[https://academic.oup.com/esr/article/38/3/337/6412759] This¸ could lead to our treatment effect being cancelled out if we applied to a broad spectrum of occupations. For this power analysis, then, we blocked on low-wage and high-wage occupations (low-wage jobs such as service industry, clerical work, etc., are often seen as stereotypical female occupations): 
+
+lm(outcome ~ condition + as.factor(group), data = d); ATE: -5% high-age, +4% low-wage
+
+Here we had a gender bias favoring men in high-wage jobs and female in low-wage jobs. Without blocking these effects would cancel each other out.
+
+**Scenario 4:** 
+
+We heard annecdotal accounts of implicit bias against candidates with gender ambigous names. This is when the person responsible for hiring is unclear if a candidate is male or female based on a name (and not suggesting the candidate is non-binary). This potential phenomenon intrigued us as we could find no study that explored it. So, for our final scenario, we did a multi-treatment analysis by including gender-ambiguous-name resumes.
+
+lm(outcome ~ condition + group, data = d); ATE: -4% ambiguous, -8% female
+
+```{r include=FALSE}
+plot_power_blocking <- function(sample_size_vector,
+                      ctrl_response_rate_low,treat_response_rate_low,
+                      ctrl_response_rate_high, treat_response_rate_high){
+  # initialize a data.table for the data
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  # run the power analysis and add the data to the table
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power_blocking(ctrl_response_rate_low, treat_response_rate_low,
+                    ctrl_response_rate_high, treat_response_rate_high,
+                    sample_size_vector[i], 1000, 0.5)
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+  
+  dt
+  
+}
+
+```
+
+
+
+```{r include=FALSE}
+plot_power <- function(sample_size_vector, ctrl_response_rate, treat_response_rate){
+  # initialize a data.table for the data
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  # run the power analysis and add the data to the table
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power(ctrl_response_rate, treat_response_rate, sample_size_vector[i], 1000, 0.5)
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+
+  dt
+}
+```
+
+
+```{r include=FALSE}
+
+plot_power_two_treatments <- function(sample_size_vector,
+                      ctrl_response_rate, treat1_response_rate, treat2_response_rate){
+  # initialize a data.table for the data
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  # run the power analysis and add the data to the table
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power_two_treatments(ctrl_response_rate, treat1_response_rate,
+                    treat2_response_rate,
+                    sample_size_vector[i], 1000, 0.5)
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+  
+  dt
+  
+}
+```
+
+
+```{r echo=FALSE}
+samples <- seq(40, 400, 10)
+
+#variables for blocking
+control_response_rate_for_low_wages=.20
+treatment_response_rate_for_low_wages=.25
+control_response_rate_for_high_wages=.16
+treatment_response_rate_for_high_wages=.12
+
+#variables for non-blocking
+treatment2_response_rate=.16
+treatment1_response_rate=.12
+
+#variables for two-treatment
+treatment2_response_rate_2=.15
+treatment1_response_rate_2=.11
+
+scenario_4 <- plot_power_two_treatments(samples, control_response_rate,
+                    treatment2_response_rate_2,
+                    treatment1_response_rate_2)
+
+scenario_3 <- plot_power_blocking(samples, control_response_rate_for_low_wages,
+                    treatment_response_rate_for_low_wages,
+                    control_response_rate_for_high_wages,
+                    treatment_response_rate_for_high_wages)
+scenario_2 <- plot_power(samples, 0.2, treatment2_response_rate)
+                         
+
+scenario_1 <-  plot_power(samples, 0.2, treatment1_response_rate)
+
+scenario_4[,category := rep('s4', length(samples))]
+scenario_3[,category := rep('s3', length(samples))]
+scenario_2[,category := rep('s2', length(samples))]
+scenario_1[,category := rep('s1', length(samples))]
+
+
+scenarios <- rbindlist(list(scenario_1, scenario_2, scenario_3, scenario_4))
+
+ggplot(data=scenarios, aes(x=sample_size, y=power)) + geom_point()+
+  geom_smooth(aes(y=power, colour=category)) +
+  scale_colour_manual(values = c('red', 'green', 'blue','orange')) +
+  ggtitle('Sample Size influence on Achieved Power')
+
+
+```
+

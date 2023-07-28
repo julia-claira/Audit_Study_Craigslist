@@ -1,0 +1,45 @@
+**Covariate Balance Check**
+
+Because we relied on Craigslist's default ad sorting to randomize our treatments (reverse chronological by posting time in each city), we thought it wise to conduct a covariate balance check to help ensure that the randomization procedure worked. In Field Experiments[^1], Gerber & Green detail a covariate balance check for binary treatments wherein we first create a null model by regressing the treatment indicator on 1 (e.g., `lm(treatment ~ 1)`), and then we regress the treatment indicator on all of the covariates. Comparing these models via F-test tells us whether including covariates improves our ability to predict the treatment condition. If the covariates do collectively help us predict the treatment condition, there is cause for concern about our randomization process. This clever method minimizes multiple comparison concerns and provides an easily interpreted test. 
+
+We had two treatment groups and one control, so this process was slightly more complex. We elected to specify three regressions to represent all possible pairings of groups, and three analogous null models for comparison via F-test. The regressions were of the form $\widehat{treatment} = \beta_0 + \beta_1covariate_1 + ... + \beta_ncovariate_n$, and included all covariates that were later used in the regression. For each version of the model, we restricted the data to only include one control/treatment pair. The three pairings we used were man and woman, man and nonbinary, woman and nonbinary. Therefore, each possible combination was accounted for, and we only needed to interpret three F-tests. No model showed a significant improvement when covariates were added, providing evidence to support our assertion that Craigslist ad ordering was sufficiently statistically independent of any other feature of our experiment to be considered random.
+
+[^1]:CITE GERBER & GREEN
+```{r}
+library(data.table)
+library(lmtest)
+library(magrittr)
+library(stargazer)
+```
+
+
+```{r read in data}
+d <- fread('data_for_analysis.csv')
+
+head(d)
+
+unique(d$job_cat)
+```
+ 
+```{r covariate balance check}
+mod_1_data <- d[treatment == 'Man' | treatment == 'Woman', tx:=ifelse(treatment=='Man', 0, 1)]
+mod_1_null <- mod_1_data[ , lm(tx ~ 1)]
+mod_1 <- mod_1_data[, lm(tx ~ 1 + factor(job_category) + factor(area) + factor(foh_boh) + factor(time_base))]
+mod_1_f <- anova(mod_1_null, mod_1, test='F')
+
+mod_2_data <- d[treatment == 'Man' | treatment == 'Nonbinary', tx:=ifelse(treatment=="Man", 0, 1)]
+mod_2_null <- mod_2_data[ , lm(tx ~ 1)]
+mod_2 <- mod_2_data[, lm(tx ~ 1 + factor(job_category) + factor(area) + factor(foh_boh) + factor(time_base))]
+mod_2_f <- anova(mod_2_null, mod_2, test='F')
+
+mod_3_data <- d[treatment == 'Woman' | treatment == 'Nonbinary', tx:=ifelse(treatment=="Woman", 0, 1)]
+mod_3_null <- mod_3_data[ , lm(tx ~ 1)]
+mod_3 <- mod_3_data[, lm(tx ~ 1 + factor(job_category) + factor(area) + factor(foh_boh) + factor(time_base))]
+mod_3_f <- anova(mod_3_null, mod_3, test='F')
+
+```
+
+```{r}
+stargazer(mod_1_f, mod_2_f, mod_3_f, type='text')
+```
+

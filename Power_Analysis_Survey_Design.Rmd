@@ -1,0 +1,113 @@
+---
+title: "Power Analysis"
+author: "Chris McClure-St. Amant"
+date: '2023-02-18'
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+library(data.table)
+install.packages('sandwich')
+library(sandwich)
+install.packages('lmtest')
+library(lmtest)
+
+library(ggplot2)
+```
+
+```{r echo=FALSE}
+analyze_power <- function(pay_proportion_treat, ctrl_mean, ctrl_sd, n, num_loops, treat_proportion=0.5){
+  # pay_proportion_difference as decimal proportion (i.e., 0.9 for treatment 
+  # making 90% of what control makes) 
+  # treat_proportion also as decimal proportion
+  
+  p_vals <- rep(NA, num_loops)
+  
+  for(i in 1:num_loops){
+    # set up data
+    treat_size <- round(n * treat_proportion, 0)
+    ctrl_size <- n - treat_size
+    treat_x <- rep(1, treat_size)
+    ctrl_x <- rep(0, ctrl_size)
+    treat_y <- rnorm(treat_size, ctrl_mean*pay_proportion_treat, ctrl_sd*pay_proportion_treat)
+    ctrl_y <- rnorm(ctrl_size, ctrl_mean, ctrl_sd)
+    d <- data.table(condition = c(treat_x, ctrl_x), outcome = c(treat_y, ctrl_y))
+    
+    # make the linear model and extract the p-value
+    mod <- lm(outcome ~ condition, data = d)
+    p_vals[i] <- summary(mod)$coefficients[2, 4]
+    #print(summary(mod))
+  
+  }
+  
+  # return proportion of p values <= .05
+  #print(p_vals)
+  mean(p_vals <= 0.05, na.rm = TRUE)
+  
+}
+```
+
+**Scenario 1:** 
+Data scientist in the Bay Area, assuming a normal distribution of salaries with approximate mean and standard deviation (\$215,000 and \$81000) from levels.fyi ^[https://www.levels.fyi/t/data-scientist/locations/san-francisco-bay-area] and pay gap as uncontrolled gap from payscale.com (women making 90% of what men do in the tech industry) ^[https://www.payscale.com/research-and-insights/gender-pay-gap/#module-13]. Also assuming normal distribution of salaries, which seems relatively reasonable based on the levels.fyi information. The sample size is 100. In this scenario, the power is `r analyze_power(.9, 215000, 81000, 100, 2000, 0.5) * 100`%.
+
+
+**Scenario 2** 
+Since we plan to restrict the salary range in our study, standard deviation is likely to be smaller. Let's say we offer a range of \$150,000 to \$250,000 as the choices for our study participants, and the mean for the men is right in the middle at \$200,000. Let's also assume that the standard deviation is \$25,000. Retaining the uncontrolled difference from payscale.com used above. The sample size is 100. In this scenario, the power is `r analyze_power(.9, 200000, 25000, 100, 2000, 0.5) * 100`%.
+
+**Scenario 3** 
+Same as scenario two except we'll assume the absolute (actually impossible) worst case for the standard deviation and make it \$50,000, just to see what happens. The sample size is 100. Here, the power is `r analyze_power(.9, 200000, 50000, 100, 2000, 0.5) * 100`%. 
+
+**Scenario 4** 
+What if the treatment effect is much smaller, but we get the advantage of the restricted salary range and standard deviation from scenario 2 (mean \$200,000, SD \$25,000). Let's say instead of a 10% salary difference, there's a 2% difference. The sample size is 100. The power is `r analyze_power(.98, 200000, 25000, 100, 2000, 0.5) * 100`%. 
+
+```{r echo=FALSE}
+multi_n <- function(sample_size_vector, pay_proportion_treat, ctrl_mean, ctrl_sd, num_loops, treat_proportion=0.5){
+  
+  dt <- data.table(id=c(1:length(sample_size_vector)), sample_size=rep(0.0, length(sample_size_vector)), power=rep(0.0, length(sample_size_vector)))
+  
+  for(i in 1:length(sample_size_vector)){
+    pow <- analyze_power(pay_proportion_treat, ctrl_mean, ctrl_sd, sample_size_vector[i], num_loops, treat_proportion)
+    
+    dt[id==i, sample_size := sample_size_vector[i]]
+    dt[id==i, power := pow]
+  }
+  
+  dt$power
+}
+```
+
+**Plot** 
+Plotting the 4 scenarios at many different sample sizes, using a smooth line to show the trends. 
+```{r echo=FALSE}
+samples <- seq(25, 600, 25)
+scenario_1 <- data.table(sample_size = samples, 
+                         power = multi_n(samples, .9, 215000, 81000, 1000, 0.5),
+                         category = rep('s1', length(samples))
+                         )
+scenario_2 <- data.table(sample_size = samples,
+                         power = multi_n(samples, .9, 200000, 25000, 1000, 0.5),
+                         category = rep('s2', length(samples))
+                         )
+scenario_3 <- data.table(sample_size = samples,
+                         power = multi_n(samples, .9, 200000, 50000, 1000, 0.5),
+                         category = rep('s3', length(samples))
+                         )
+scenario_4 <- data.table(sample_size = samples,
+                         power = multi_n(samples, .98, 200000, 25000, 1000, 0.5),
+                         category = rep('s4', length(samples))
+                         )
+
+scenarios <- rbindlist(list(scenario_1, scenario_2, scenario_3, scenario_4))
+
+ggplot(data=scenarios, aes(x=sample_size)) +
+  geom_point(aes(y=power)) +
+  geom_smooth(aes(y=power, colour=category)) +
+  scale_colour_manual(values = c('red', 'green', 'blue', 'orange'))
+
+
+
+```
