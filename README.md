@@ -6,7 +6,7 @@
 
 This project is a comprehensive exploration into the realm of data collection, analysis, and automation. The primary goal was to streamline the process of data gathering and analysis, and to provide insights into the data using statistical methods. The project also aimed to contribute to the conversation on gender disparity in the food-service industry by conducting an experiment to explore whether gender implicit bias exists in hiring practices.
 
-<img src="images/interview_req.png" width="400">
+<img src="images/interview_req.png" width="600">
 
 ## Technical and Structural Aspects
 
@@ -15,19 +15,20 @@ The project structure is organized in a way that allows for easy navigation and 
 ## Statistical Analysis
 
 The statistical analysis was conducted using R. The analysis includes various techniques such as covariate balance checks and power analysis. 
-![power analysis](/images/power_analysis.png)
+
+<img src="images/power_analysis.png" width="600">
 
 The R scripts provide a detailed view of the statistical methods used, and they can be a valuable resource for anyone interested in statistical analysis.
 
 The analysis was conducted using several models. The base model regressed the outcome on the treatment. The second model included covariates, and the third model examined heterogeneous treatment effects for the front and back of house. The final model added fixed effects for location, time-base of employment, and finer-grained categories for the type of job that was advertised.
 
-![jobs applied](/images/jobs_applied.png)
+<img src="images/jobs_applied.png" width="600">
 
 Covariate balance checks were conducted to ensure that the randomization procedure worked. This involved creating a null model by regressing the treatment indicator on 1, and then regressing the treatment indicator on all of the covariates. Comparing these models via F-test tells us whether including covariates improves our ability to predict the treatment condition. If the covariates do collectively help us predict the treatment condition, there is cause for concern about our randomization process. In this study, no model showed a significant improvement when covariates were added, providing evidence to support our assertion that Craigslist ad ordering was sufficiently statistically independent of any other feature of our experiment to be considered random.
 
 ## Study Design
 
-![study design](/images/study_design.png)
+<img src="images/study_design.png" width="600">
 
 The study involved a randomized auditing experiment spanning four weeks and encompassing six cities. More than 600 near-identical resumes were sent out, only changing the names to imply different genders. The study focused on the initial contact stage with the employer, measuring their interest or disinterest in a candidate as a binary outcome.
 
