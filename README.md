@@ -6,7 +6,7 @@
 
 This project is a comprehensive exploration into the realm of data collection, analysis, and automation. The primary goal was to streamline the process of data gathering and analysis, and to provide insights into the data using statistical methods. The project also aimed to contribute to the conversation on gender disparity in the food-service industry by conducting an experiment to explore whether gender implicit bias exists in hiring practices.
 
-![interview requests](images/interview_req.png)
+![interview requests](images/interview_req.png, width=300)
 
 ## Technical and Structural Aspects
 
