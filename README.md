@@ -44,6 +44,8 @@ In revisiting the power calculations conducted prior to the study, we find that 
 
 ## Contributions
 
+Claira Kauffmann, Christopher McClure-St. Amant, Edward Junprung, Sunayna Jain
+
 This project was a collaborative effort, and each team member contributed significantly to its success. My major contributions were in the development of the web scraper and the automation process using Google API and Python, as well as in the statistical analysis using R.
 
 One of my major contributions of this project was the development of a web scraper using Google API and Python. This tool is capable of collecting large amounts of data and populating Google Sheets automatically. It also has the functionality to write and send emails, thereby automating a significant part of the process. I was also involved in the study design, and the power and statistical analysis.
