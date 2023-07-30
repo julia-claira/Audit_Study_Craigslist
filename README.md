@@ -44,7 +44,7 @@ In revisiting the power calculations conducted prior to the study, we find that 
 
 ## Contributions
 
-Claira Kauffmann, Christopher McClure-St. Amant, Edward Junprung, Sunayna Jain
+Julia Claira Kauffmann, Christopher McClure-St. Amant, Edward Junprung, Sunayna Jain
 
 This project was a collaborative effort, and each team member contributed significantly to its success. My major contributions were in the development of the web scraper and the automation process using Google API and Python, as well as in the statistical analysis using R.
 
